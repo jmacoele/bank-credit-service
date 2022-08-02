@@ -21,19 +21,19 @@ import lombok.ToString;
 @Document(value = "creditcards")
 public class CreditCard {
 
-	@Id
-	private String id;
-	
-	private CreditCardTypeEnum creditCardType;
-	
-	private String number;
-	
-	private String ownerName;
-	
-	private LocalDateTime issueDate;
-	
-	private LocalDateTime dueDate;
-	
-	private String cvc;
-	
+  @Id
+  private String id;
+
+  private CreditCardTypeEnum creditCardType;
+
+  private String number;
+
+  private String ownerName;
+
+  private LocalDateTime issueDate;
+
+  private LocalDateTime dueDate;
+
+  private String cvc;
+
 }

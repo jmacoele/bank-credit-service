@@ -25,36 +25,36 @@ import lombok.ToString;
 @AllArgsConstructor
 @Document(value = "credits")
 public class Credit {
-	
-	@Id
-	private String id;
-	
-	private String number;
 
-	private CreditTypeEnum creditType;
-	
-	private String clientId;
-	
-	private Double loan;
-	
-	private Double loanInterest;
-	
-	private Double contableBalance;
-	
-	private CreditCard credicard;
-	
-	private List<CreditPayment> payments;
-		
-    @CreatedDate
-    private LocalDateTime createdAt;
+  @Id
+  private String id;
 
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
+  private String number;
 
-    @CreatedBy
-    private String createdBy;
+  private CreditTypeEnum creditType;
 
-    @LastModifiedBy
-    private String updatedBy;
-	
+  private String clientId;
+
+  private Double loan;
+
+  private Double loanInterest;
+
+  private Double contableBalance;
+
+  private CreditCard credicard;
+
+  private List<CreditPayment> payments;
+
+  @CreatedDate
+  private LocalDateTime createdAt;
+
+  @LastModifiedDate
+  private LocalDateTime updatedAt;
+
+  @CreatedBy
+  private String createdBy;
+
+  @LastModifiedBy
+  private String updatedBy;
+
 }
