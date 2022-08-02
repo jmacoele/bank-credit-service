@@ -3,6 +3,12 @@ package com.nttdata.bankcreditservice.model.document.type;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.nttdata.bankcreditservice.exception.UnknownEnumValueException;
+/**
+ * Credit Type Enum.
+ *
+ * @author jmacoele
+ *
+ */
 
 public enum CreditTypeEnum {
   PERSONAL("P"),
@@ -15,7 +21,14 @@ public enum CreditTypeEnum {
   public String getValue() {
     return value;
   }
-
+  
+  /**
+   * Function of that convert string into Enum value.
+   *
+   * @param value Enum value string-converted.
+   * @return CreditTypeEnum.
+   */
+  
   @JsonCreator
   public static CreditTypeEnum of(String value) {
     if (null == value) {

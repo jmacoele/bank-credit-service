@@ -1,9 +1,14 @@
 package com.nttdata.bankcreditservice.model.service;
 
 import com.nttdata.bankcreditservice.model.document.Credit;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+/**
+ * ICreditService Interface.
+ *
+ * @author jmacoele
+ *
+ */
 
 public interface ICreditService {
 

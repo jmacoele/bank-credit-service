@@ -1,18 +1,21 @@
 package com.nttdata.bankcreditservice.service;
 
-import java.util.Objects;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.nttdata.bankcreditservice.model.document.Credit;
 import com.nttdata.bankcreditservice.model.document.type.CreditTypeEnum;
 import com.nttdata.bankcreditservice.model.repository.ICreditRepository;
 import com.nttdata.bankcreditservice.model.service.ICreditService;
-
+import java.util.Objects;
+import java.util.UUID;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+/**
+ * Credit Service.
+ *
+ * @author jmacoele
+ *
+ */
 
 @Service
 public class CreditService implements ICreditService {
@@ -34,10 +37,8 @@ public class CreditService implements ICreditService {
 
   private void validateCredit(Credit credit) throws Exception {
 
-    /***
-     * Reglas para credito Personal
-     */
-
+    
+    // Reglas para credito Personal.
     if (credit.getCreditType().equals(CreditTypeEnum.PERSONAL)) {
       String clientId = credit.getClientId();
 

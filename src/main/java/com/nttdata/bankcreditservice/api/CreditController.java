@@ -1,5 +1,9 @@
 package com.nttdata.bankcreditservice.api;
 
+import com.nttdata.bankcreditservice.model.document.Credit;
+import com.nttdata.bankcreditservice.service.CreditService;
+import io.swagger.v3.oas.annotations.Operation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,14 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.nttdata.bankcreditservice.model.document.Credit;
-import com.nttdata.bankcreditservice.service.CreditService;
-
-import io.swagger.v3.oas.annotations.Operation;
-import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+/**
+ * Credit Service.
+ *
+ * @author jmacoele
+ *
+ */
 
 @RestController
 @RequestMapping("/credits")
@@ -29,7 +33,7 @@ public class CreditController {
 
   @GetMapping
   @Operation(summary = "Get list of Credits")
-  public Flux<Credit> getAll(){
+  public Flux<Credit> getAll() {
     log.info("getAll" + "OK");
     return creditService.findAll().log();
   }
@@ -43,7 +47,8 @@ public class CreditController {
 
   @PutMapping("{id}")
   @Operation(summary = "Update Credit by Id")
-  public Mono<Credit> updateById(@PathVariable("id") final String id, @RequestBody final Credit credit) throws Exception {
+  public Mono<Credit> updateById(@PathVariable("id") final String id,
+      @RequestBody final Credit credit) throws Exception {
     log.info("update: " + id);
     return creditService.save(id, credit).log();
   }
