@@ -44,7 +44,7 @@ public class Credit {
 
   private Double contableBalance;
 
-  private CreditCard credicard;
+  private String credicard;
 
   private List<CreditPayment> payments;
 

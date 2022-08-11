@@ -35,7 +35,7 @@ public class CreditService implements ICreditService {
         .switchIfEmpty(Flux.empty());
   }
 
-  private void validateCredit(Credit credit) throws Exception {
+  private void validateCredit(Credit credit) {
 
     
     // Reglas para credito Personal.
